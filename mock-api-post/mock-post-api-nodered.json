@@ -1,0 +1,53 @@
+[
+  {
+      "id": "52f8a0d9.41bc2",
+      "type": "debug",
+      "z": "2304a4eb.c599ac",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "x": 610,
+      "y": 560,
+      "wires": []
+  },
+  {
+      "id": "4f81ae6a.17c8d",
+      "type": "http request",
+      "z": "2304a4eb.c599ac",
+      "name": "",
+      "method": "POST",
+      "ret": "txt",
+      "url": "http://localhost:3000/api/account",
+      "tls": "",
+      "x": 350,
+      "y": 560,
+      "wires": [
+          [
+              "52f8a0d9.41bc2"
+          ]
+      ]
+  },
+  {
+      "id": "60e4183c.498838",
+      "type": "inject",
+      "z": "2304a4eb.c599ac",
+      "name": "",
+      "topic": "",
+      "payload": "{\"form\":{\"data\":\"tak\"}}",
+      "payloadType": "json",
+      "repeat": "",
+      "crontab": "",
+      "once": false,
+      "onceDelay": 0.1,
+      "x": 160,
+      "y": 560,
+      "wires": [
+          [
+              "4f81ae6a.17c8d"
+          ]
+      ]
+  }
+]

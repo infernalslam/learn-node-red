@@ -1,67 +1,59 @@
-[{
-	"id": "cddb1f9c.28fe2",
-	"type": "tab",
-	"label": "Flow 1",
-	"disabled": false,
-	"info": ""
-}, {
-	"id": "2cc1424f.09072e",
-	"type": "inject",
-	"z": "cddb1f9c.28fe2",
-	"name": "Hello World",
-	"topic": "helloworld",
-	"payload": "{\"text\":\"123\"}",
-	"payloadType": "json",
-	"repeat": "",
-	"crontab": "",
-	"once": false,
-	"onceDelay": 0.1,
-	"x": 210,
-	"y": 240,
-	"wires": [
-		["2aaed697.02c9da"]
-	]
-}, {
-	"id": "51fb4a76.e037b4",
-	"type": "debug",
-	"z": "cddb1f9c.28fe2",
-	"name": "",
-	"active": true,
-	"tosidebar": true,
-	"console": false,
-	"tostatus": false,
-	"complete": "payload",
-	"x": 730,
-	"y": 240,
-	"wires": []
-}, {
-	"id": "2aaed697.02c9da",
-	"type": "function",
-	"z": "cddb1f9c.28fe2",
-	"name": "logic",
-	"func": "// validate\nlet msgObject = msg.payload\nif (typeof msgObject === 'object') {\n    return { payload: msgObject }\n}\nnode.error(\"Error\", msg)\n",
-	"outputs": 1,
-	"noerr": 0,
-	"x": 450,
-	"y": 380,
-	"wires": [
-		["51fb4a76.e037b4"]
-	]
-}, {
-	"id": "f3310d82.4e4a6",
-	"type": "inject",
-	"z": "cddb1f9c.28fe2",
-	"name": "FormCreateAccount",
-	"topic": "formAccount",
-	"payload": "{\"accountType\":\"offical\",\"name\":\"tak\",\"surname\":\"xxx\",\"plan\":\"A\",\"startDate\":\"2018-01-01\"}",
-	"payloadType": "json",
-	"repeat": "",
-	"crontab": "",
-	"once": false,
-	"onceDelay": 0.1,
-	"x": 230,
-	"y": 660,
-	"wires": [
-		[]
-	]
-}]
+[
+  {
+      "id": "cddb1f9c.28fe2",
+      "type": "tab",
+      "label": "Flow 1",
+      "disabled": false,
+      "info": ""
+  },
+  {
+      "id": "2cc1424f.09072e",
+      "type": "inject",
+      "z": "cddb1f9c.28fe2",
+      "name": "Hello World",
+      "topic": "helloworld",
+      "payload": "{\"text\":\"123\"}",
+      "payloadType": "json",
+      "repeat": "",
+      "crontab": "",
+      "once": false,
+      "onceDelay": 0.1,
+      "x": 210,
+      "y": 240,
+      "wires": [
+          [
+              "2aaed697.02c9da"
+          ]
+      ]
+  },
+  {
+      "id": "51fb4a76.e037b4",
+      "type": "debug",
+      "z": "cddb1f9c.28fe2",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "payload",
+      "x": 730,
+      "y": 240,
+      "wires": []
+  },
+  {
+      "id": "2aaed697.02c9da",
+      "type": "function",
+      "z": "cddb1f9c.28fe2",
+      "name": "logic",
+      "func": "// validate\nlet msgObject = msg.payload\nif (typeof msgObject === 'object') {\n    return { payload: msgObject }\n}\nnode.error(\"Error\", msg)\n",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 450,
+      "y": 380,
+      "wires": [
+          [
+              "51fb4a76.e037b4"
+          ]
+      ]
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+      "id": "3975cbd2.6ea404",
+      "type": "debug",
+      "z": "2304a4eb.c599ac",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "x": 630,
+      "y": 400,
+      "wires": []
+  },
+  {
+      "id": "5d5d5d7c.ea2734",
+      "type": "http request",
+      "z": "2304a4eb.c599ac",
+      "name": "",
+      "method": "GET",
+      "ret": "txt",
+      "url": "https://swapi.co/api/people/1",
+      "tls": "",
+      "x": 370,
+      "y": 400,
+      "wires": [
+          [
+              "3975cbd2.6ea404"
+          ]
+      ]
+  },
+  {
+      "id": "855a6b4a.e4f708",
+      "type": "inject",
+      "z": "2304a4eb.c599ac",
+      "name": "",
+      "topic": "",
+      "payload": "",
+      "payloadType": "date",
+      "repeat": "",
+      "crontab": "",
+      "once": false,
+      "onceDelay": 0.1,
+      "x": 140,
+      "y": 420,
+      "wires": [
+          [
+              "5d5d5d7c.ea2734"
+          ]
+      ]
+  }
+]

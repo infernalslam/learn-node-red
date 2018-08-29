@@ -1,0 +1,46 @@
+[
+  {
+      "id": "9a6c8ce6.96cdf",
+      "type": "http in",
+      "z": "cddb1f9c.28fe2",
+      "name": "",
+      "url": "/api/account",
+      "method": "post",
+      "upload": false,
+      "swaggerDoc": "",
+      "x": 150,
+      "y": 820,
+      "wires": [
+          [
+              "81f45924.a5dbf8"
+          ]
+      ]
+  },
+  {
+      "id": "81f45924.a5dbf8",
+      "type": "function",
+      "z": "cddb1f9c.28fe2",
+      "name": "vaildate",
+      "func": "let payload = msg.payload\n\n\nif (payload.name && payload.surname) {\n    console.log('1')\n    msg.statusCode = 200\n}\nif (!payload.name) {\n    console.log('2')\n    msg.statusCode = 500\n    msg.payload = {\n        \"ERROR\": \"Display name should not empty\"\n    }\n}\nif (!payload.surname) {\n    console.log('3')\n    msg.statusCode = 500\n    msg.payload = {\n        \"ERROR\": \"Display surname should not empty\"\n    }\n}\n\nreturn msg",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 400,
+      "y": 820,
+      "wires": [
+          [
+              "28317158.f6977e"
+          ]
+      ]
+  },
+  {
+      "id": "28317158.f6977e",
+      "type": "http response",
+      "z": "cddb1f9c.28fe2",
+      "name": "",
+      "statusCode": "",
+      "headers": {},
+      "x": 630,
+      "y": 840,
+      "wires": []
+  }
+]
